@@ -12,8 +12,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const parsed = parse(response);
 
-    if (parsed.urlset.url) {
-      const result = parsed.urlset.url.map((url: { loc: string }) => url.loc);
+    if (parsed.urlset?.url) {
+      const result = parsed.urlset.url.map((url: { loc: string }) => url?.loc);
 
       if (random === "true") {
         const randomResult = result[Math.floor(Math.random() * result.length)];
